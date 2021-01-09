@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 text-center mb-5 mb-md-0">
+				<img class="img-fluid" src="{{ .Params.body.image | absURL }}" alt="">
+			</div>
+			<div class="col-md-6 align-self-center text-center text-md-left">
+				<div class="block">
+					<h1 class="font-weight-bold mb-4 font-size-60">{{ .Params.body.title | markdownify }}</h1>
+					<p class="mb-4">{{ .Params.body.content| markdownify }}</p>
+					{{ if .Params.body.button.enable }}
+					{{ with .Params.body.button }}
+					<a href="{{.link|absLangURL}}" class="btn btn-main">{{.label}}</a>
+					{{ end }}
+					{{ end }}
+				</div>
+			</div>
+		</div><!-- .row close -->
+	</div><!-- .container close -->
+</section><!-- header close -->
+
+<section class="bg-orange section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center mb-5 mb-lg-0">
+        <img class="img-fluid" src="{{ .Params.promo.image | absURL }}" alt="">
+      </div>
+      <div class="col-md-6 align-self-center text-center text-md-left">
+        <div class="content">
+          <h2 class="text-white font-weight-bold mb-10">{{ .Params.promo.title | markdownify }}</h2>
+          <p class="text-white">{{ .Params.promo.content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
