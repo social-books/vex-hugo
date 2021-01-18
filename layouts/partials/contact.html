@@ -2,7 +2,7 @@
 
 {{- if $data.homepage.contact.enable }}
 {{- with $data.homepage.contact }}
-<section class="section bg-opacity" id="contact" style="background-image: url('{{ .bg_image | absURL }}');">
+<section class="section bg-opacity" id="contact" style="background-image: url('{{ .bg_image | absURL }}');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
   <div class="row justify-content-center">
       <div class="col-lg-8">
         <h2 class="font-weight-bold mb-4">{{ .title | markdownify }}</h2>
@@ -29,3 +29,7 @@
 
 {{- end }}
 {{- end }}
+
+
+
+background-size: auto;
