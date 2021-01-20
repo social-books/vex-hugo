@@ -22,7 +22,7 @@
       <div class="col-md-4">
           {{ range .right_side }}
           <div class="mb-80 text-center text-md-left">
-            <p>{{ .key | markdownify }}: {{ .value | markdownify }}</p>
+            <p>{{ .key | markdownify }} {{ .value | markdownify }}</p>
           </div>
         {{ end }}
       </div>
